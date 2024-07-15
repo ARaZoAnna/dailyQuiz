@@ -35,13 +35,19 @@ public class TestController {
         return "index";
     }
 
+    @GetMapping("/form")
+    public String showForm(Model model) {
+        User user = new User();
+        model.addAttribute("user", user);
+        return "form";
+    }
 
 
-    @PostMapping("/form")
-    public String saveUser(@ModelAttribute("users") User user){
+    @PostMapping("/users")
+    public String saveUser(@ModelAttribute("user") User user){
         System.out.println("유저의 이름은" + user.getUsername() + "입니다.");
         System.out.println("유저의 이메일은" + user.getEmail() + "입니다.");
-        System.out.println("유저의 이메일은" + user.getPassword() + "입니다.");
+        System.out.println("유저의 비밀번호는" + user.getPassword() + "입니다.");
         return "redirect:/form";
     }
 

@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang ="ko">
 <head>
     <meta charset="UTF-8">
     <title>User 저장</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
 </head>
 <body>
 <h1>User 저장</h1>
-<form th:action="@{/users}" method="post">
+<form th:action="@{/users}"
+      th:object="${user}"
+      method="post">
     <div>
         <label for="name">이름</label>
-        <input type="text" id="name" name="username" />
+        <input type="text" id="name" th:field="*{username}"/>
     </div>
     <div>
         <label for="email">이메일</label>
-        <input type="text" id="email" name="email" />
+        <input type="text" id="email" th:field="*{email}"/>
     </div>
     <div>
         <label for="password">비밀번호</label>
-        <input type="text" id="password" name="password" />
+        <input type="text" id="password" th:field="*{password}"/>
     </div>
     <button type="submit">저장</button>
 </form>
