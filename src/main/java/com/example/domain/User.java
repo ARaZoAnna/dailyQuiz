@@ -11,4 +11,5 @@ public class User {
     private String username;
     private String email;
     private Boolean isAdmin;
+    private String password;
 }

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
 </head>
 <body>
 <h1>dailyQuiz</h1>
@@ -16,6 +17,22 @@
     <p th:if="${user.isAdmin}"><a th:href="@{/adminpage}">관리자 메뉴</a></p>
     <p th:unless="${user.isAdmin}"><a th:href="@{/userpage}">일반 사용자 메뉴</a> </p>
 </div>
-
+<table>
+    <thead>
+    <tr>
+        <th>아이디</th>
+        <th>제품명</th>
+        <th>가격</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product : ${products}">
+        <td th:text="${product.id}"></td>
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.price}"></td>
+    </tr>
+    </tbody>
+</table>
+<a th:href="@{/form}">사용자 등록</a>
 </body>
 </html>

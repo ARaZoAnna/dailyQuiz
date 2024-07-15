@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User 저장</title>
+</head>
+<body>
+<h1>User 저장</h1>
+<form th:action="@{/users}" method="post">
+    <div>
+        <label for="name">이름</label>
+        <input type="text" id="name" name="username" />
+    </div>
+    <div>
+        <label for="email">이메일</label>
+        <input type="text" id="email" name="email" />
+    </div>
+    <div>
+        <label for="password">비밀번호</label>
+        <input type="text" id="password" name="password" />
+    </div>
+    <button type="submit">저장</button>
+</form>
+
+</body>
+</html>
