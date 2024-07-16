@@ -21,9 +21,18 @@
         <td th:text="${book.title}"></td>
         <td th:text="${book.author}"></td>
         <td th:text="${book.year}"></td>
+        <td><a th:href="@{/editBook/{id}(id=${book.id})}" class="edit-btn">수정</a>
+            <form th:action="@{/deleteBook/{id}(id=${book.id})}" method="post">
+                <button type="submit">삭제</button>
+            </form>
+        </td>
+
     </tr>
     </tbody>
 </table>
 <a th:href="@{/addBook}">book 등록</a>
+<!--<a th:href="@{/editBook}">수정</a>-->
+<!--<a th:href="@{}">삭제</a>-->
+
 </body>
 </html>
