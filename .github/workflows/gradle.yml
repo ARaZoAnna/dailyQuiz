@@ -77,4 +77,6 @@ jobs:
           EC2_HOST: ${{ secrets.EC2_HOST }}
         run: |
           scp -i ~/.ssh/id_rsa *.jar $EC2_USER@$EC2_HOST:/home/ubuntu
-#again
+          nohup java -jar /home/ubuntu/*.jar>/dev/null 2>&1 & 
+
+#nohup은 ssh가 끊겨도 돌린다 & 데몬(백그라운드에서)으로 돌리나
