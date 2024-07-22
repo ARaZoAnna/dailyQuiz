@@ -62,7 +62,7 @@ jobs:
           name: build-artifacts
 
       - name: List artifact directory
-        run: ls -la  # 다운로드한 아티팩트의 디렉토리 내용 확인
+        run: ls -la
 
       - name: Set up SSH key
         run: |
